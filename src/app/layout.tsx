@@ -37,7 +37,9 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-            {children}
+            <div className="min-h-screen flex items-center justify-center">
+              {children}
+            </div>
           </ThemeProvider>
         </ClerkProvider>
       </body>

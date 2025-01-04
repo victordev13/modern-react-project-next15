@@ -10,7 +10,7 @@ type ButtonProps = LinkProps &
 export default function LinkButton({ children, ...props }: ButtonProps) {
   return (
     <Link
-      className={`px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700 ${props.className}`}
+      className={`px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700 w-fit ${props.className}`}
       {...props}
     >
       {children}
