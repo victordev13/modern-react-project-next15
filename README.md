@@ -5,10 +5,13 @@ Tech:
  - Clerk for authentication
  - Shadcn/ui for UI components
  - ES Lint
+ - MySQL Database with Prisma ORM
+ - 
 
 TODO: 
- - [ ] Create a form using server actions
- - [ ] Connect to the database
+ - [x] Create a form using server actions
+ - [x] Connect to the database
  - [ ] Create a registration form
- - [ ] Create a simple product register
+ - [x] Create a simple product register
+ - [ ] Create a advanced product register
   - Using Tanstack forms and Tanstack table

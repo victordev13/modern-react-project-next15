@@ -1,5 +1,6 @@
 'use client'
 import { createProduct } from '@/app/actions/products/create'
+import LinkButton from '@/app/components/Button'
 import { Button } from '@/app/components/ui/button'
 import {
   Card,
@@ -64,6 +65,10 @@ export default function NewProduct() {
             <Button type="submit" variant="secondary" disabled={isFormPending}>
               Add Product
             </Button>
+            <div className="flex gap-4">
+              <LinkButton href="/dashboard">Dashboard</LinkButton>
+              <LinkButton href="/dashboard/products">List Products</LinkButton>
+            </div>
           </div>
         </form>
       </CardContent>

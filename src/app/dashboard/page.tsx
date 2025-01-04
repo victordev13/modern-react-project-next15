@@ -7,6 +7,7 @@ import {
 } from '@/app/components/ui/card'
 import ToggleTheme from '@/app/components/toggle-theme'
 import LinkButton from '../components/Button'
+import { Button } from '../components/ui/button'
 
 export default function Dashboard() {
   return (
@@ -17,11 +18,11 @@ export default function Dashboard() {
       <CardContent className="flex flex-col gap-4">
         <p>Welcome to your dashboard!</p>
         <ToggleTheme />
-
-        <LinkButton href="/dashboard/products/new">Add Product</LinkButton>
       </CardContent>
-      <CardFooter>
-        <button>Logout</button>
+      <CardFooter className="flex gap-4">
+        <LinkButton href="/dashboard/products">List Products</LinkButton>
+        <LinkButton href="/dashboard/products/new">Add Product</LinkButton>
+        <Button variant="destructive">Logout</Button>
       </CardFooter>
     </Card>
   )
