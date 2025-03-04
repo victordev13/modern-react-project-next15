@@ -1,6 +1,7 @@
 'use client'
 import { createProduct } from '@/app/actions/products/create'
 import LinkButton from '@/app/components/Button'
+import { CategorySelect } from '@/app/components/products/CategorySelect'
 import { Button } from '@/app/components/ui/button'
 import {
   Card,
@@ -9,7 +10,7 @@ import {
   CardTitle,
 } from '@/app/components/ui/card'
 import { Input } from '@/app/components/ui/input'
-import React, { useActionState } from 'react'
+import React, { Suspense, useActionState } from 'react'
 
 export default function NewProduct() {
   const [state, formAction, isFormPending] = useActionState(createProduct, {
@@ -41,6 +42,18 @@ export default function NewProduct() {
             </label>
             <Input name="price" type="number" step="0.01" required />
           </div>
+          <div className="mb-6">
+            <label
+              className="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2"
+              htmlFor="category"
+            >
+              Category
+            </label>
+            <Suspense fallback={<div>Loading...</div>}>
+              <CategorySelect name="category" />
+            </Suspense>
+          </div>
+
           {state?.message && (
             <p aria-live="polite" className="text-red-500 mb-6">
               {state.message}
@@ -56,8 +69,11 @@ export default function NewProduct() {
               Add Product
             </Button>
             <div className="flex gap-4">
-              <LinkButton href="/dashboard">Dashboard</LinkButton>
+              <LinkButton href="/dashboard/categories/new">
+                New Category
+              </LinkButton>
               <LinkButton href="/dashboard/products">List Products</LinkButton>
+              <LinkButton href="/dashboard">Dashboard</LinkButton>
             </div>
           </div>
         </form>

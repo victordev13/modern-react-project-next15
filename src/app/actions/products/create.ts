@@ -2,7 +2,7 @@
 
 import { prismaClient } from '@/lib/prisma'
 
-export async function createProduct(prevState, formData: FormData) {
+export async function createProduct(prevState: unknown, formData: FormData) {
   const name = formData.get('name')
   const price = Number(formData.get('price')?.toString())
   if (!name || !price) {
